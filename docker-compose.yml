@@ -1,0 +1,17 @@
+cups:
+  image: reto/cupsserver
+  
+firefox:
+  image: reto/firefox
+  links:
+   - cups:printserver
+  ports:
+   - "8322:22"
+   
+vnc:
+  image: misho1kr/vnc-secure
+  links:
+   - firefox:firefox
+  ports:
+   - "2020:22"
+   
