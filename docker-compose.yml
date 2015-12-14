@@ -1,17 +1,22 @@
+userdata:
+  image: busybox
+  volumes:
+   - /home/user
+  entrypoint: /bin/true
+
 cups:
   image: reto/cupsserver
+  restart: unless-stopped
   
-firefox:
-  image: reto/firefox
+thunderbird:
+  image: reto/thunderbird
+  restart: unless-stopped
   links:
    - cups:printserver
-  ports:
-   - "8322:22"
-   
-vnc:
-  image: misho1kr/vnc-secure
-  links:
-   - firefox:firefox
+  volumes_from:
+   - userdata
   ports:
    - "2020:22"
+   
+ 
    
