@@ -18,5 +18,17 @@ thunderbird:
   ports:
    - "2020:22"
    
- 
+devdata:
+  image: busybox
+  volumes:
+   - /home/user
+  entrypoint: /bin/true
+
+dev:
+  image: reto/dev
+  restart: unless-stopped
+  volumes_from:
+   - devdata
+  ports:
+   - "2222:22"
    
