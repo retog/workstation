@@ -1,0 +1,9 @@
+bindsym $mod+Shift+h exec xpra --ssh="ssh -p 2020" attach ssh:user@$COMHOST:100
+bindsym $mod+Shift+d exec xpra --ssh="ssh -p 2222" attach ssh:user@$DEVHOST:100
+
+bindsym $mod+Control+n exec ssh -p 2222 user@$DEVHOST 'netbeans < /dev/null > /dev/null 2>&1 &'
+bindsym $mod+Control+Return exec ssh -p 2222 user@$DEVHOST 'xfce4-terminal < /dev/null > /dev/null 2>&1 &'
+bindsym $mod+b exec ssh -p 2020 user@$COMHOST 'firefox < /dev/null > /dev/null 2>&1 &'
+bindsym $mod+Control+b exec ssh -p 2222 user@$DEVHOST 'firefox < /dev/null > /dev/null 2>&1 &'
+bindsym $mod+t exec ssh -p 2020 user@$COMHOST 'thunderbird < /dev/null > /dev/null 2>&1 &'
+bindsym $mod+m exec ssh -p 2020 user@$COMHOST 'thunderbird -compose < /dev/null > /dev/null 2>&1 &'
